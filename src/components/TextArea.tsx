@@ -37,8 +37,8 @@ export const TextArea = ({ onChange, type, value, loading }: Props) => {
       onChange={handleChange}
       value={value}
       placeholder={getPlaceholder({ type, loading })}
-      className={`h-[200px] w-[200px] border-none outline-blue-200 resize-none  ${
-        type === "to" ? "bg-[#f5f5f5] outline-0 outline-none" : ""
+      className={`block h-[350px] w-[330px] p-2 resize-none text-sm text-gray-900  rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 outline-none  ${
+        type === "to" ? "bg-gray-200 outline-0 outline-none border-none" : ""
       }`}
       readOnly={type === "from" ? false : true}
     ></textarea>

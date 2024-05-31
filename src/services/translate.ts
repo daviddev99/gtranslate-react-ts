@@ -5,12 +5,12 @@ interface Props {
   toLanguage: Language;
   fromText: string;
 }
-export const translate = ({ fromLanguage, fromText, toLanguage }: Props) => {
+export const translate = async ({ fromLanguage, fromText, toLanguage }: Props) => {
   const url = `${
     import.meta.env.VITE_API_URL
   }?client=gtx&sl=${fromLanguage}&tl=${toLanguage}&dt=t&q=${encodeURI(
     fromText
   )}`;
 
-  return fetch(url).then((response) => response.json());
+  return await fetch(url).then((response) => response.json());
 };

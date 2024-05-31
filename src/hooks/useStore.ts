@@ -15,8 +15,12 @@ function reducer(state: State, action: Action) {
   switch (type) {
     case "SWITCH_LANGUAGES":
       if (state.fromLanguage === "auto") return state;
+    
       return {
         ...state,
+        loading: state.fromText !== '',
+        fromText: state.result,
+        result: state.fromText,
         fromLanguage: state.toLanguage,
         toLanguage: state.fromLanguage,
       };
